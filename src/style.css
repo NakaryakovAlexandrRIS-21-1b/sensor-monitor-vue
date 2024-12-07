@@ -1,0 +1,27 @@
+@import 'primeicons/primeicons.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body{
+    height: max-content;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
+#app{
+    height: 98vh;
+}
+
+
+
