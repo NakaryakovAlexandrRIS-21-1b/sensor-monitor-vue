@@ -60,6 +60,16 @@ const addChosen = e => {
 			:key="p?.part.id"
 			:x1="`${p.pointX}%`"
 			:y1="`${p.pointY}%`"
+			:x2="`${(p.left-p.pointX)/2+p.pointX}%`"
+			:y2="`${p.top}%`"
+			stroke="white"
+			stroke-width="1"
+		></line>
+		<line
+			v-for="p in chosenParts"
+			:key="p?.part.id"
+			:x1="`${(p.pointX-p.left)/2+p.left}%`"
+			:y1="`${p.top}%`"
 			:x2="`${p.left}%`"
 			:y2="`${p.top}%`"
 			stroke="white"
@@ -69,7 +79,7 @@ const addChosen = e => {
 	<div
 		draggable="true"
 		class="z-top h-min w-min absolute bg-surface-800 rounded-2xl border border-white"
-		:style="{ top: `${p?.top}%`, left: `${p?.left}%` }"
+		:style="{ top: `${p?.top}%`, left: `${p?.left}%`, transform: 'translate(-50%, -25%)' }"
 		v-for="p in chosenParts"
 		:key="p?.part.id"
 		@dragstart="dragstart"
